@@ -165,17 +165,17 @@ def venue(message):
   url = f'https://maps.google.com/?q={message.location.latitude},{message.location.longitude}'
   bot.reply_to(message, f"so {user_name}, you are currently at this location \n{url}")
 
-@bot.message_handler(commands=['paid'])
-def paid(message):
-  print('message.photo =', message.photo)
-  fileID = message.photo[-1].file_id
-  print('fileID =', fileID)
-  file_info = bot.get_file(fileID)
-  print('file.file_path =', file_info.file_path)
-  downloaded_file = bot.download_file(file_info.file_path)
+# @bot.message_handler(commands=['paid'])
+# def paid(message):
+#   print('message.photo =', message.photo)
+#   fileID = message.photo[-1].file_id
+#   print('fileID =', fileID)
+#   file_info = bot.get_file(fileID)
+#   print('file.file_path =', file_info.file_path)
+#   downloaded_file = bot.download_file(file_info.file_path)
 
-  with open("image.jpg", 'wb') as new_file:
-      new_file.write(downloaded_file)
+#   with open("image.jpg", 'wb') as new_file:
+#       new_file.write(downloaded_file)
 # start_api()
 # Thread(target=start_api).start()
 
